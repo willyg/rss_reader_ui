@@ -4,7 +4,7 @@
   <v-flex xs12 v-if="!loading" v-for="rss_entry in rss_entries" :key="rss_entry.rssId">
     <v-card>
       <v-card-actions>
-        <v-icon v-on:click="toggleShow(rss_entry, $event)">
+        <v-icon class="rss_title_icon" v-on:click="toggleShow(rss_entry, $event)">
           {{ rss_entry.show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
         </v-icon>
         <div>
@@ -12,7 +12,7 @@
           <span class="grey--text">{{rss_entry.source}}</span>
         </div>
         <v-spacer></v-spacer>
-        <v-icon v-on:click="toggleShow(rss_entry, $event)">
+        <v-icon class="rss_title_icon" v-on:click="toggleShow(rss_entry, $event)">
           {{ rss_entry.show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
         </v-icon>
       </v-card-actions>
@@ -31,24 +31,6 @@
   </v-btn>
 </v-layout>
 </template>
-
-<style>
-.content img{
-  max-width: 100%;
-}
-
-.content h1,
-.content h2,
-.content h3,
-.content h4 {
-  font-size: 1.2em;
-}
-
-.rss_title {
-  line-height: inherit;
-  margin-bottom: 0;
-}
-</style>
 
 <script>
 import axios from 'axios'
@@ -89,3 +71,26 @@ export default {
   }
 }
 </script>
+
+<style>
+.content img{
+  max-width: 100%;
+}
+
+.content h1,
+.content h2,
+.content h3,
+.content h4 {
+  font-size: 1.2em;
+}
+
+.rss_title {
+  line-height: inherit;
+  margin-bottom: 0;
+}
+
+.rss_title_icon {
+  margin-left: -0.2em;
+  margin-right: 0;
+}
+</style>
