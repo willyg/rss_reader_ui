@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .content img{
   max-width: 100%;
 }
@@ -83,7 +83,9 @@ export default {
 .content h4 {
   font-size: 1.2em;
 }
+</style>
 
+<style scoped>
 .rss_title {
   line-height: inherit;
   margin-bottom: 0;
