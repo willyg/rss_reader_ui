@@ -67,7 +67,7 @@ export default {
     },
     fetchData () {
       this.loading = true
-      axios.get('http://172.17.210.18:5000/api/rss_entries')
+      axios.get('/api/rss_entries')
       .then(response => {
         this.rss_entries = response.data.map(this.hideEntry)
         this.loading = false
@@ -81,7 +81,7 @@ export default {
     },
     deleteAll () {
       let rssIds = this.rss_entries.map(x => x.rssId).join()
-      axios.delete('http://172.17.210.18:5000/api/rss_entries/' + rssIds)
+      axios.delete('/api/rss_entries/' + rssIds)
       .then(response => {
         this.fetchData()
       })

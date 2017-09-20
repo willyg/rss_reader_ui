@@ -31,7 +31,7 @@ export default{
   },
   methods: {
     fetchData () {
-      axios.get('http://172.17.210.18:5000/api/rss_sources/')
+      axios.get('/api/rss_sources/')
       .then(response => {
         this.rss_sources = response.data
         this.loading = false
@@ -39,19 +39,19 @@ export default{
     },
     saveRSS (rssSource) {
       if (rssSource.source_id) {
-        axios.put('http://172.17.210.18:5000/api/rss_sources/' + rssSource.source_id, rssSource)
+        axios.put('/api/rss_sources/' + rssSource.source_id, rssSource)
         .then(response => {
           this.fetchData()
         })
       } else {
-        axios.post('http://172.17.210.18:5000/api/rss_sources/', rssSource)
+        axios.post('/api/rss_sources/', rssSource)
         .then(response => {
           this.fetchData()
         })
       }
     },
     deleteRSS (rssSource) {
-      axios.delete('http://172.17.210.18:5000/api/rss_sources/' + rssSource.source_id)
+      axios.delete('/api/rss_sources/' + rssSource.source_id)
       .then(response => {
         this.rss_sources.splice(this.rss_sources.indexOf(rssSource), 1)
       })
