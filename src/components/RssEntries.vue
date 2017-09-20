@@ -59,8 +59,8 @@ export default {
       let currentShow = rssEntry.show
       this.rss_entries = this.rss_entries.map(this.hideEntry)
       rssEntry.show = !currentShow
-      this.$nextTick(function(){
-        event.target.parentNode.parentNode.parentNode.scrollIntoView()  
+      this.$nextTick(function () {
+        event.target.parentNode.parentNode.parentNode.scrollIntoView()
       })
     },
     deleteAll () {
