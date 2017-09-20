@@ -7,8 +7,7 @@ cache:
   - node_modules
 script:
 - yarn run build
-before_deploy:
-- cd dist && zip -r dist.zip .
+- cd dist && zip -r release.zip .
 deploy:
   provider: releases
   api_key:
