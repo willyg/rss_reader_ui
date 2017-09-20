@@ -32,7 +32,7 @@
 </v-layout>
 </template>
 
-<script scoped>
+<script>
 import axios from 'axios'
 export default {
   data: () => ({
@@ -72,7 +72,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .content img{
   max-width: 100%;
 }
