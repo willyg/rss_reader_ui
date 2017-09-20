@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/willyg/rss_reader_ui.svg?branch=master)](https://travis-ci.org/willyg/rss_reader_ui)
 # vue1
 
 > A Vue.js project
