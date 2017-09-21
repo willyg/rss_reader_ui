@@ -53,6 +53,7 @@ export default {
       .then(response => {
         this.rss_entries = response.data.map(this.hideEntry)
         this.loading = false
+        window.scrollTo(0,0)
       })
     },
     toggleShow (rssEntry, event) {
