@@ -23,7 +23,7 @@
       </v-slide-y-transition>
     </v-card>
   </v-flex>
-  <v-btn block error v-on:click="deleteAll()" v-if="rss_entries.length > 0">
+  <v-btn block error v-on:click="deleteAll()" v-if="!loading && rss_entries.length > 0">
     Mark all as read
   </v-btn>
   <v-btn fixed dark fab bottom right class="teal" v-on:click="fetchData()">
@@ -51,9 +51,9 @@ export default {
       this.loading = true
       axios.get('/api/rss_entries')
       .then(response => {
+        window.scrollTo(0, 0)
         this.rss_entries = response.data.map(this.hideEntry)
         this.loading = false
-        window.scrollTo(0, 0)
       })
     },
     toggleShow (rssEntry, event) {
