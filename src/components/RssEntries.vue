@@ -8,7 +8,10 @@
           {{ rss_entry.show ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}
         </v-icon>
         <div>
-          <h5 class="rss_title"><a target="_blank" v-bind:href="rss_entry.link" v-html="rss_entry.title"></a></h5>
+          <h5 class="rss_title">
+            <v-icon v-if="rss_entry.isRead">check_circle</v-icon>
+            <a target="_blank" v-bind:href="rss_entry.link" v-html="rss_entry.title"></a>
+          </h5>
           <span class="grey--text">{{rss_entry.source}}</span>
         </div>
         <v-spacer></v-spacer>
@@ -60,6 +63,7 @@ export default {
       let currentShow = rssEntry.show
       this.rss_entries = this.rss_entries.map(this.hideEntry)
       rssEntry.show = !currentShow
+      rssEntry.isRead = true
       event.target.parentNode.parentNode.parentNode.scrollIntoView()
     },
     deleteAll () {
