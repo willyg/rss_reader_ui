@@ -26,7 +26,7 @@
       </v-slide-y-transition>
     </v-card>
   </v-flex>
-  <v-btn block error v-on:click="deleteAll()" v-if="!loading && rss_entries.length > 0">
+  <v-btn block error v-on:click="deleteAll()" class="read-all" v-if="!loading && rss_entries.length > 0">
     Mark all as read
   </v-btn>
   <v-btn fixed dark fab bottom right class="teal" v-on:click="fetchData()">
@@ -99,5 +99,8 @@ export default {
 .rss_title_icon {
   margin-left: -0.2em;
   margin-right: 0;
+}
+.read-all {
+  margin-bottom: 5em;
 }
 </style>
